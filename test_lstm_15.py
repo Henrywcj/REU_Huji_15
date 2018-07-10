@@ -84,7 +84,7 @@ if(len(feat4)%2==1):
 	feat4=feat4[:-1]
 
 feat4[:,::2,:]=feat3
-feat4[:,1::2,:]=feat3
+feat4[:,1::2,:]=feat3[:, :-1, :]
 
 q1 = K.function([model.layers[0].input],[model.layers[1].output])
 rec=q1([feat4])
