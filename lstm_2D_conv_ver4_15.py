@@ -121,7 +121,7 @@ if(len(feat4)%2==1):
 	feat4=feat4[:-1]
 
 feat4[:,::2,:]=feat3
-feat4[:,1::2,:]=feat3
+feat4[:,1::2,:]=feat3[:, :-1, :]
 
 input_img = Input(shape=(fr_rate, feat_sz*no_auto))
 l=GRU(100, return_sequences=True, activation='tanh',inner_activation='hard_sigmoid') (input_img)
